@@ -6,6 +6,7 @@ PRODUCT_SOONG_NAMESPACES += \
     vendor/xiaomi/sea
 
 PRODUCT_COPY_FILES += \
+    vendor/xiaomi/sea/proprietary/system_ext/etc/init/android.hardware.audio.parameter_parser.service.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/android.hardware.audio.parameter_parser.service.rc \
     vendor/xiaomi/sea/proprietary/vendor/build_k7sr.prop:$(TARGET_COPY_OUT_VENDOR)/build_k7sr.prop \
     vendor/xiaomi/sea/proprietary/vendor/build_ksrl.prop:$(TARGET_COPY_OUT_VENDOR)/build_ksrl.prop \
     vendor/xiaomi/sea/proprietary/vendor/build_ksrn.prop:$(TARGET_COPY_OUT_VENDOR)/build_ksrn.prop \
@@ -265,6 +266,7 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/sea/proprietary/vendor/etc/gralloc/gpu.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gralloc/gpu.xml \
     vendor/xiaomi/sea/proprietary/vendor/etc/gralloc/vpu.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gralloc/vpu.xml \
     vendor/xiaomi/sea/proprietary/vendor/etc/init.insmod.mt6781.cfg:$(TARGET_COPY_OUT_VENDOR)/etc/init.insmod.mt6781.cfg \
+    vendor/xiaomi/sea/proprietary/vendor/etc/init/android.hardware.audio.service-aidl.mediatek.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.audio.service-aidl.mediatek.rc \
     vendor/xiaomi/sea/proprietary/vendor/etc/init/android.hardware.cas@1.2-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.cas@1.2-service.rc \
     vendor/xiaomi/sea/proprietary/vendor/etc/init/android.hardware.gatekeeper-service.beanpod.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.gatekeeper-service.beanpod.rc \
     vendor/xiaomi/sea/proprietary/vendor/etc/init/android.hardware.gnss-service.mediatek.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.gnss-service.mediatek.rc \
@@ -344,6 +346,7 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/sea/proprietary/vendor/etc/mtk_platform_codecs_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mtk_platform_codecs_config.xml \
     vendor/xiaomi/sea/proprietary/vendor/etc/nnapi_powerhal.json:$(TARGET_COPY_OUT_VENDOR)/etc/nnapi_powerhal.json \
     vendor/xiaomi/sea/proprietary/vendor/etc/partition_permission.sh:$(TARGET_COPY_OUT_VENDOR)/etc/partition_permission.sh \
+    vendor/xiaomi/sea/proprietary/vendor/etc/permissions/com.xiaomi.sensor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.xiaomi.sensor.xml \
     vendor/xiaomi/sea/proprietary/vendor/etc/power_app_cfg.xml:$(TARGET_COPY_OUT_VENDOR)/etc/power_app_cfg.xml \
     vendor/xiaomi/sea/proprietary/vendor/etc/powercontable.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powercontable.xml \
     vendor/xiaomi/sea/proprietary/vendor/etc/powerscntbl.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerscntbl.xml \
@@ -362,6 +365,7 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/sea/proprietary/vendor/etc/seccomp_policy/mediacodec.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy \
     vendor/xiaomi/sea/proprietary/vendor/etc/seccomp_policy/mediaextractor.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediaextractor.policy \
     vendor/xiaomi/sea/proprietary/vendor/etc/seccomp_policy/mediaswcodec.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediaswcodec.policy \
+    vendor/xiaomi/sea/proprietary/vendor/etc/sensor_diag.cfg:$(TARGET_COPY_OUT_VENDOR)/etc/sensor_diag.cfg \
     vendor/xiaomi/sea/proprietary/vendor/etc/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf \
     vendor/xiaomi/sea/proprietary/vendor/etc/slp_conf:$(TARGET_COPY_OUT_VENDOR)/etc/slp_conf \
     vendor/xiaomi/sea/proprietary/vendor/etc/smartpa_param/fsmsdg_params.bin:$(TARGET_COPY_OUT_VENDOR)/etc/smartpa_param/fsmsdg_params.bin \
@@ -479,11 +483,12 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/sea/proprietary/vendor/thh/ta/isee_model.json:$(TARGET_COPY_OUT_VENDOR)/thh/ta/isee_model.json
 
 PRODUCT_PACKAGES += \
+    av-audio-types-aidl-V1-ndk \
     AVCSecureVdecCA \
     HEVCSecureVdecCA \
     VP9SecureVdecCA \
     android.hardware.audio.core-impl-mediatek \
-    android.hardware.bluetooth.audio-impl \
+    android.hardware.bluetooth.audio-impl-mediatek \
     arm.graphics-V5-ndk \
     arm.mali.platform-V2-ndk \
     libGLES_mali \
@@ -520,6 +525,7 @@ PRODUCT_PACKAGES += \
     power.default \
     sensors.dynamic_sensor_hal \
     sound_trigger.primary.default \
+    vendor.mediatek.hardware.audio-impl \
     vendor.mediatek.hardware.bluetooth.audio@2.1-impl \
     vendor.mediatek.hardware.bluetooth.audio@2.2-impl \
     vendor.mediatek.hardware.camera.postproc@1.0-impl \
@@ -1300,10 +1306,12 @@ PRODUCT_PACKAGES += \
     s5khm2sd_main_semco_mipi_raw_tuning \
     s5khm2sp_main_sunny_mipi_raw_IdxMgr \
     s5khm2sp_main_sunny_mipi_raw_tuning \
+    sensors.touch.detect \
     vendor.mediatek.framework.mtksf_ext-V2-ndk \
     vendor.mediatek.framework.mtksf_ext-V3-ndk \
     vendor.mediatek.hardware.apmonitor-V1-ndk \
     vendor.mediatek.hardware.apmonitor@2.0 \
+    vendor.mediatek.hardware.audio-V1-ndk \
     vendor.mediatek.hardware.audio@6.1 \
     vendor.mediatek.hardware.bluetooth.audio-V1-ndk \
     vendor.mediatek.hardware.bluetooth.audio@2.1 \
@@ -1627,6 +1635,8 @@ PRODUCT_PACKAGES += \
     com.google.android.widevine.nonupdatable \
     SoterService \
     com.fingerprints.extension \
+    android.hardware.audio.effect.service-aidl.xml \
+    android.hardware.audio.service-aidl.mediatek.xml \
     android.hardware.cas@1.2-service.xml \
     android.hardware.gatekeeper-service.beanpod.xml \
     android.hardware.neuralnetworks-shim-service-mtk.xml \
@@ -1648,6 +1658,7 @@ PRODUCT_PACKAGES += \
     fuelgauged_nvram \
     gsm0710muxd \
     hostapd_cli \
+    android.hardware.audio.service-aidl.mediatek \
     android.hardware.cas@1.2-service \
     android.hardware.contexthub-service.tinysys \
     android.hardware.gatekeeper-service.beanpod \
@@ -1683,7 +1694,8 @@ PRODUCT_PACKAGES += \
     wlan_assistant \
     wmt_launcher \
     wmt_loader \
-    wpa_cli
+    wpa_cli \
+    android.hardware.audio.parameter_parser.service
 
 PRODUCT_PACKAGES += \
     vendor_lib_hw_vulkan_mt6781_so \
