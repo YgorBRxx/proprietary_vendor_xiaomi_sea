@@ -46332,6 +46332,37 @@ cc_prebuilt_binary {
 }
 
 cc_prebuilt_binary {
+    name: "rcs_volte_stack",
+    owner: "xiaomi",
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/bin/rcs_volte_stack",
+            ],
+            shared_libs: [
+                "libcutils",
+                "liblog",
+                "librcs_volte_core",
+                "libcrypto",
+                "libnetutils",
+                "libhardware",
+                "libhardware_legacy",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    strip: {
+        none: true,
+    },
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
     name: "rttv",
     owner: "xiaomi",
     target: {
@@ -46443,6 +46474,206 @@ cc_prebuilt_binary {
         },
     },
     compile_multilib: "64",
+    strip: {
+        none: true,
+    },
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "volte_imcb",
+    owner: "xiaomi",
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/bin/volte_imcb",
+            ],
+            shared_libs: [
+                "libvolte_core_shr",
+                "libvolte_xdmc_shr",
+                "libverno",
+                "libcutils",
+                "liblog",
+                "libc",
+                "libdl",
+                "libm",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    strip: {
+        none: true,
+    },
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "volte_imsm_93",
+    owner: "xiaomi",
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/bin/volte_imsm_93",
+            ],
+            shared_libs: [
+                "libcutils",
+                "libverno",
+                "liblog",
+                "libc",
+                "libdl",
+                "libm",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    strip: {
+        none: true,
+    },
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "volte_md_status",
+    owner: "xiaomi",
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/bin/volte_md_status",
+            ],
+            shared_libs: [
+                "libcutils",
+                "libverno",
+                "liblog",
+                "libc",
+                "libdl",
+                "libm",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    strip: {
+        none: true,
+    },
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "volte_rcs_ua",
+    owner: "xiaomi",
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/bin/volte_rcs_ua",
+            ],
+            shared_libs: [
+                "libbase",
+                "libcutils",
+                "libfmq",
+                "liblog",
+                "libutils",
+                "libhardware",
+                "libhidlbase",
+                "libhidltransport",
+                "libhwbinder",
+                "vendor.mediatek.hardware.rcs@2.0",
+                "libbinder_ndk",
+                "vendor.mediatek.hardware.rcs-V1-ndk",
+                "libhardware_legacy",
+                "libcrypto",
+                "libnetutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    strip: {
+        none: true,
+    },
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "volte_stack",
+    owner: "xiaomi",
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/bin/volte_stack",
+            ],
+            shared_libs: [
+                "libvolte_core_shr",
+                "libvolte_xdmc_shr",
+                "libipsec_ims_shr",
+                "libverno",
+                "libcutils",
+                "liblog",
+                "libc",
+                "libdl",
+                "libm",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    strip: {
+        none: true,
+    },
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "volte_ua",
+    owner: "xiaomi",
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/bin/volte_ua",
+            ],
+            shared_libs: [
+                "libvolte_core_shr",
+                "libvolte_xdmc_shr",
+                "libverno",
+                "libcutils",
+                "liblog",
+                "libc",
+                "libdl",
+                "libm",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    strip: {
+        none: true,
+    },
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "wfca",
+    owner: "xiaomi",
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/bin/wfca",
+            ],
+            shared_libs: [
+                "liblog",
+                "libc",
+                "libdl",
+                "libm",
+            ],
+        },
+    },
+    compile_multilib: "32",
     strip: {
         none: true,
     },
