@@ -316,6 +316,7 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/sea/proprietary/vendor/etc/init/vendor.mediatek.hardware.nvram-sevice.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.mediatek.hardware.nvram-sevice.rc \
     vendor/xiaomi/sea/proprietary/vendor/etc/init/vendor.mediatek.hardware.pq_aidl-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.mediatek.hardware.pq_aidl-service.rc \
     vendor/xiaomi/sea/proprietary/vendor/etc/init/vendor.xiaomi.hardware.displayfeature@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.xiaomi.hardware.displayfeature@1.0-service.rc \
+    vendor/xiaomi/sea/proprietary/vendor/etc/init/vendor.xiaomi.hardware.micharge-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.xiaomi.hardware.micharge-service.rc \
     vendor/xiaomi/sea/proprietary/vendor/etc/init/volte_clientapi_ua.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/volte_clientapi_ua.rc \
     vendor/xiaomi/sea/proprietary/vendor/etc/init/wlan_assistant.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/wlan_assistant.rc \
     vendor/xiaomi/sea/proprietary/vendor/etc/le_audio_codec_capabilities.xml:$(TARGET_COPY_OUT_VENDOR)/etc/le_audio_codec_capabilities.xml \
@@ -1633,6 +1634,7 @@ PRODUCT_PACKAGES += \
     vendor.mediatek.hardware.power@2.0 \
     vendor.microtrust.hardware.soter@1.0 \
     vendor.microtrust.hardware.thh@2.0 \
+    vendor.xiaomi.hardware.micharge-V2-ndk \
     vendor.xiaomi.hardware.mimd@1.0 \
     vendor.xiaomi.hardware.mrm-V1-ndk_platform \
     vendor.xiaomi.hw.touchfeature-V1-ndk \
@@ -1660,6 +1662,7 @@ PRODUCT_PACKAGES += \
     mapper.mediatek.xml \
     mtk_lbs_service.xml \
     vendor.xiaomi.hardware.displayfeature@1.0-service.xml \
+    vendor.xiaomi.hardware.micharge.xml \
     batterysecret \
     bp_kmsetkey_ca \
     ccci_mdinit \
@@ -1688,6 +1691,7 @@ PRODUCT_PACKAGES += \
     vendor.mediatek.hardware.nvram-service \
     vendor.mediatek.hardware.pq_aidl-service \
     vendor.xiaomi.hardware.displayfeature@1.0-service \
+    vendor.xiaomi.hardware.micharge-service \
     vtservice_aidl \
     init_thh \
     iperf \
