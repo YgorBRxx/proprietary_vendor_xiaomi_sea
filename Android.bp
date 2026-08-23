@@ -1685,6 +1685,114 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "displayfeature.default",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/hw/displayfeature.default.so",
+            ],
+            shared_libs: [
+                "libcutils",
+                "liblog",
+                "libutils",
+                "libbinder",
+                "libxml2",
+                "libdrm",
+                "libstagefright_foundation",
+                "libhidltransport",
+                "libhidlbase",
+                "android.frameworks.sensorservice@1.0",
+                "libtinyxml2",
+                "libhardware",
+                "android.hardware.graphics.allocator@2.0",
+                "android.hardware.graphics.allocator@3.0",
+                "android.hardware.graphics.mapper@3.0",
+                "android.hardware.graphics.common@1.2",
+                "libmiSensorCtrl",
+                "libtruetone",
+                "libvideomode",
+                "libpaperMode",
+                "libmiBrightness",
+                "libcolortempmode",
+                "libflatmode",
+                "libmi_dspp",
+                "libMiDispDevManager",
+                "libsdr2hdr",
+                "libsre",
+                "libdither",
+                "vendor.mediatek.hardware.pq_aidl-V4-ndk",
+                "android.hidl.allocator@1.0",
+                "android.hidl.memory@1.0",
+                "libhidlmemory",
+                "libeyecare",
+                "vendor.mediatek.hardware.pq@2.10",
+                "libmiXmlParser",
+                "libbinder_ndk",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/hw/displayfeature.default.so",
+            ],
+            shared_libs: [
+                "libcutils",
+                "liblog",
+                "libutils",
+                "libbinder",
+                "libxml2",
+                "libdrm",
+                "libstagefright_foundation",
+                "libhidltransport",
+                "libhidlbase",
+                "android.frameworks.sensorservice@1.0",
+                "libtinyxml2",
+                "libhardware",
+                "android.hardware.graphics.allocator@2.0",
+                "android.hardware.graphics.allocator@3.0",
+                "android.hardware.graphics.mapper@3.0",
+                "android.hardware.graphics.common@1.2",
+                "libmiSensorCtrl",
+                "libtruetone",
+                "libvideomode",
+                "libpaperMode",
+                "libmiBrightness",
+                "libcolortempmode",
+                "libflatmode",
+                "libmi_dspp",
+                "libMiDispDevManager",
+                "libsdr2hdr",
+                "libsre",
+                "libdither",
+                "vendor.mediatek.hardware.pq_aidl-V4-ndk",
+                "android.hidl.allocator@1.0",
+                "android.hidl.memory@1.0",
+                "libhidlmemory",
+                "libeyecare",
+                "vendor.mediatek.hardware.pq@2.10",
+                "libmiXmlParser",
+                "libbinder_ndk",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "gps.default",
     owner: "xiaomi",
     strip: {
@@ -2623,6 +2731,60 @@ cc_prebuilt_library_shared {
                 "liblog",
                 "libbase",
                 "libc++",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.xiaomi.hardware.displayfeature@1.0-impl",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/hw/vendor.xiaomi.hardware.displayfeature@1.0-impl.so",
+            ],
+            shared_libs: [
+                "libhidlbase",
+                "libhidltransport",
+                "libutils",
+                "liblog",
+                "libcutils",
+                "libhardware",
+                "libbase",
+                "libbinder",
+                "vendor.xiaomi.hardware.displayfeature@1.0",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/hw/vendor.xiaomi.hardware.displayfeature@1.0-impl.so",
+            ],
+            shared_libs: [
+                "libhidlbase",
+                "libhidltransport",
+                "libutils",
+                "liblog",
+                "libcutils",
+                "libhardware",
+                "libbase",
+                "libbinder",
+                "vendor.xiaomi.hardware.displayfeature@1.0",
+                "libc++",
+                "libc",
                 "libm",
                 "libdl",
             ],
@@ -45159,6 +45321,15 @@ prebuilt_etc_xml {
     soc_specific: true,
 }
 
+prebuilt_etc_xml {
+    name: "vendor.xiaomi.hardware.displayfeature@1.0-service.xml",
+    owner: "xiaomi",
+    src: "proprietary/vendor/etc/vintf/manifest/vendor.xiaomi.hardware.displayfeature@1.0-service.xml",
+    filename_from_src: true,
+    sub_dir: "vintf/manifest",
+    soc_specific: true,
+}
+
 cc_prebuilt_binary {
     name: "batterysecret",
     owner: "xiaomi",
@@ -45284,6 +45455,35 @@ sh_binary {
     owner: "xiaomi",
     src: "proprietary/vendor/bin/chipinfo",
     filename: "chipinfo",
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "displayfeature",
+    owner: "xiaomi",
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/bin/displayfeature",
+            ],
+            shared_libs: [
+                "libcutils",
+                "liblog",
+                "libutils",
+                "libbinder",
+                "libdisplayfeatureservice",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    strip: {
+        none: true,
+    },
+    prefer: true,
     soc_specific: true,
 }
 
@@ -46008,6 +46208,40 @@ cc_prebuilt_binary {
             ],
             shared_libs: [
                 "vendor.mediatek.hardware.pq_aidl-impl",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    strip: {
+        none: true,
+    },
+    prefer: true,
+    relative_install_path: "hw",
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "vendor.xiaomi.hardware.displayfeature@1.0-service",
+    owner: "xiaomi",
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/bin/hw/vendor.xiaomi.hardware.displayfeature@1.0-service",
+            ],
+            shared_libs: [
+                "liblog",
+                "libcutils",
+                "libbase",
+                "libutils",
+                "libbinder",
+                "libhardware",
+                "libhidlbase",
+                "libhidltransport",
+                "vendor.xiaomi.hardware.displayfeature@1.0",
                 "libc++",
                 "libc",
                 "libm",

@@ -315,6 +315,7 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/sea/proprietary/vendor/etc/init/vendor.mediatek.hardware.mms-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.mediatek.hardware.mms-service.rc \
     vendor/xiaomi/sea/proprietary/vendor/etc/init/vendor.mediatek.hardware.nvram-sevice.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.mediatek.hardware.nvram-sevice.rc \
     vendor/xiaomi/sea/proprietary/vendor/etc/init/vendor.mediatek.hardware.pq_aidl-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.mediatek.hardware.pq_aidl-service.rc \
+    vendor/xiaomi/sea/proprietary/vendor/etc/init/vendor.xiaomi.hardware.displayfeature@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.xiaomi.hardware.displayfeature@1.0-service.rc \
     vendor/xiaomi/sea/proprietary/vendor/etc/init/volte_clientapi_ua.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/volte_clientapi_ua.rc \
     vendor/xiaomi/sea/proprietary/vendor/etc/init/wlan_assistant.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/wlan_assistant.rc \
     vendor/xiaomi/sea/proprietary/vendor/etc/le_audio_codec_capabilities.xml:$(TARGET_COPY_OUT_VENDOR)/etc/le_audio_codec_capabilities.xml \
@@ -522,6 +523,7 @@ PRODUCT_PACKAGES += \
     audio_policy.stub \
     consumerir.common \
     consumerir.default \
+    displayfeature.default \
     gps.default \
     gralloc.default \
     id_attestation.beanpod \
@@ -539,6 +541,7 @@ PRODUCT_PACKAGES += \
     vendor.mediatek.hardware.nvram-impl \
     vendor.mediatek.hardware.pq_aidl-impl \
     vendor.mediatek.hardware.videotelephony-impl \
+    vendor.xiaomi.hardware.displayfeature@1.0-impl \
     vulkan.mali \
     imx355_ultra_ofilm_mipi_raw_IdxMgr \
     imx355_ultra_ofilm_mipi_raw_tuning \
@@ -1656,11 +1659,13 @@ PRODUCT_PACKAGES += \
     manifest_hwcomposer.xml \
     mapper.mediatek.xml \
     mtk_lbs_service.xml \
+    vendor.xiaomi.hardware.displayfeature@1.0-service.xml \
     batterysecret \
     bp_kmsetkey_ca \
     ccci_mdinit \
     ccci_rpcd \
     chipinfo \
+    displayfeature \
     fuelgauged \
     fuelgauged_nvram \
     gsm0710muxd \
@@ -1682,6 +1687,7 @@ PRODUCT_PACKAGES += \
     vendor.mediatek.hardware.mms-service \
     vendor.mediatek.hardware.nvram-service \
     vendor.mediatek.hardware.pq_aidl-service \
+    vendor.xiaomi.hardware.displayfeature@1.0-service \
     vtservice_aidl \
     init_thh \
     iperf \
