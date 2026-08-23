@@ -296,6 +296,7 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/sea/proprietary/vendor/etc/init/init.gps_drv.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.gps_drv.rc \
     vendor/xiaomi/sea/proprietary/vendor/etc/init/init.md_apps.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.md_apps.rc \
     vendor/xiaomi/sea/proprietary/vendor/etc/init/init.mi_thermald.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.mi_thermald.rc \
+    vendor/xiaomi/sea/proprietary/vendor/etc/init/init.touch.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.touch.rc \
     vendor/xiaomi/sea/proprietary/vendor/etc/init/init.volte_imcb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.volte_imcb.rc \
     vendor/xiaomi/sea/proprietary/vendor/etc/init/init.volte_imsm_93.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.volte_imsm_93.rc \
     vendor/xiaomi/sea/proprietary/vendor/etc/init/init.volte_md_status.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.volte_md_status.rc \
@@ -311,11 +312,14 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/sea/proprietary/vendor/etc/init/microtrust.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/microtrust.rc \
     vendor/xiaomi/sea/proprietary/vendor/etc/init/mtk_agpsd_p.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/mtk_agpsd_p.rc \
     vendor/xiaomi/sea/proprietary/vendor/etc/init/mtk_lbs_service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/mtk_lbs_service.rc \
+    vendor/xiaomi/sea/proprietary/vendor/etc/init/mtkpower_applist-mtk-default.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/mtkpower_applist-mtk-default.rc \
     vendor/xiaomi/sea/proprietary/vendor/etc/init/mtkrild.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/mtkrild.rc \
     vendor/xiaomi/sea/proprietary/vendor/etc/init/nvram_daemon.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/nvram_daemon.rc \
     vendor/xiaomi/sea/proprietary/vendor/etc/init/v3avpud.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/v3avpud.rc \
     vendor/xiaomi/sea/proprietary/vendor/etc/init/vendor.mediatek.hardware.mmagent-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.mediatek.hardware.mmagent-service.rc \
     vendor/xiaomi/sea/proprietary/vendor/etc/init/vendor.mediatek.hardware.mms-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.mediatek.hardware.mms-service.rc \
+    vendor/xiaomi/sea/proprietary/vendor/etc/init/vendor.mediatek.hardware.mtkpower@1.0-init.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.mediatek.hardware.mtkpower@1.0-init.rc \
+    vendor/xiaomi/sea/proprietary/vendor/etc/init/vendor.mediatek.hardware.mtkpower@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.mediatek.hardware.mtkpower@1.0-service.rc \
     vendor/xiaomi/sea/proprietary/vendor/etc/init/vendor.mediatek.hardware.nvram-sevice.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.mediatek.hardware.nvram-sevice.rc \
     vendor/xiaomi/sea/proprietary/vendor/etc/init/vendor.mediatek.hardware.pq_aidl-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.mediatek.hardware.pq_aidl-service.rc \
     vendor/xiaomi/sea/proprietary/vendor/etc/init/vendor.xiaomi.hardware.displayfeature@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.xiaomi.hardware.displayfeature@1.0-service.rc \
@@ -545,6 +549,7 @@ PRODUCT_PACKAGES += \
     vendor.mediatek.hardware.bluetooth.audio@2.1-impl \
     vendor.mediatek.hardware.bluetooth.audio@2.2-impl \
     vendor.mediatek.hardware.camera.postproc@1.0-impl \
+    vendor.mediatek.hardware.mtkpower-aidl-impl \
     vendor.mediatek.hardware.nvram-impl \
     vendor.mediatek.hardware.pq_aidl-impl \
     vendor.mediatek.hardware.videotelephony-impl \
@@ -1250,6 +1255,8 @@ PRODUCT_PACKAGES += \
     libpcdmr \
     libperfctl_vendor \
     libpixelflinger \
+    libpower_timer \
+    libpowerhalwrap_vendor \
     libpq_cust_base \
     libpqframework \
     libpqhdrmetaparser \
@@ -1344,6 +1351,7 @@ PRODUCT_PACKAGES += \
     vendor.mediatek.hardware.mmagent-V1-ndk \
     vendor.mediatek.hardware.mms-V1-ndk \
     vendor.mediatek.hardware.mtkpower-V2-ndk \
+    vendor.mediatek.hardware.mtkpower_applist-V2-ndk \
     vendor.mediatek.hardware.netdagent-V1-ndk \
     vendor.mediatek.hardware.netdagent@1.0 \
     vendor.mediatek.hardware.nvram-V1-ndk \
@@ -1373,6 +1381,7 @@ PRODUCT_PACKAGES += \
     vendor.mediatek.hardware.rcs-V1-ndk \
     vendor.mediatek.hardware.rcs@2.0 \
     APUWareUtilsAidlServer \
+    android.hardware.power-service-mediatek \
     chre_atoms_log \
     chremetrics-cpp \
     android.hardware.camera.provider@2.6-impl-mediatek \
@@ -1667,6 +1676,8 @@ PRODUCT_PACKAGES += \
     manifest_media_c2_default.xml \
     mapper.mediatek.xml \
     mtk_lbs_service.xml \
+    mtkpower_applist-mtk-default.xml \
+    power-mediatek.xml \
     vendor.xiaomi.hardware.displayfeature@1.0-service.xml \
     vendor.xiaomi.hardware.micharge.xml \
     vendor.xiaomi.hw.touchfeature-service.xml \
@@ -1701,6 +1712,8 @@ PRODUCT_PACKAGES += \
     vendor.mediatek.hardware.gpuserv-service \
     vendor.mediatek.hardware.mmagent-service \
     vendor.mediatek.hardware.mms-service \
+    vendor.mediatek.hardware.mtkpower-service.mediatek \
+    vendor.mediatek.hardware.mtkpower_applist-service.mediatek \
     vendor.mediatek.hardware.nvram-service \
     vendor.mediatek.hardware.pq_aidl-service \
     vendor.xiaomi.hardware.displayfeature@1.0-service \
