@@ -1646,7 +1646,6 @@ PRODUCT_PACKAGES += \
     libstagefright_wfd_mtk \
     com.android.hardware.cas \
     com.google.android.widevine.nonupdatable \
-    SoterService \
     com.fingerprints.extension \
     android.hardware.audio.effect.service-aidl.xml \
     android.hardware.audio.service-aidl.mediatek.xml \
