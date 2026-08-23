@@ -318,6 +318,7 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/sea/proprietary/vendor/etc/init/vendor.mediatek.hardware.pq_aidl-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.mediatek.hardware.pq_aidl-service.rc \
     vendor/xiaomi/sea/proprietary/vendor/etc/init/vendor.xiaomi.hardware.displayfeature@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.xiaomi.hardware.displayfeature@1.0-service.rc \
     vendor/xiaomi/sea/proprietary/vendor/etc/init/vendor.xiaomi.hardware.micharge-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.xiaomi.hardware.micharge-service.rc \
+    vendor/xiaomi/sea/proprietary/vendor/etc/init/vendor.xiaomi.hw.touchfeature-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.xiaomi.hw.touchfeature-service.rc \
     vendor/xiaomi/sea/proprietary/vendor/etc/init/volte_clientapi_ua.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/volte_clientapi_ua.rc \
     vendor/xiaomi/sea/proprietary/vendor/etc/init/wlan_assistant.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/wlan_assistant.rc \
     vendor/xiaomi/sea/proprietary/vendor/etc/le_audio_codec_capabilities.xml:$(TARGET_COPY_OUT_VENDOR)/etc/le_audio_codec_capabilities.xml \
@@ -1663,6 +1664,7 @@ PRODUCT_PACKAGES += \
     mtk_lbs_service.xml \
     vendor.xiaomi.hardware.displayfeature@1.0-service.xml \
     vendor.xiaomi.hardware.micharge.xml \
+    vendor.xiaomi.hw.touchfeature-service.xml \
     batterysecret \
     bp_kmsetkey_ca \
     ccci_mdinit \
@@ -1693,6 +1695,7 @@ PRODUCT_PACKAGES += \
     vendor.mediatek.hardware.pq_aidl-service \
     vendor.xiaomi.hardware.displayfeature@1.0-service \
     vendor.xiaomi.hardware.micharge-service \
+    vendor.xiaomi.hw.touchfeature-service \
     vtservice_aidl \
     init_thh \
     iperf \
