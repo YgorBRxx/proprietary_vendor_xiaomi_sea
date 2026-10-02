@@ -307,6 +307,7 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/sea/proprietary/vendor/etc/init/init.wlan_drv.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.wlan_drv.rc \
     vendor/xiaomi/sea/proprietary/vendor/etc/init/init.wmt_drv.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.wmt_drv.rc \
     vendor/xiaomi/sea/proprietary/vendor/etc/init/ipsec_mon.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/ipsec_mon.rc \
+    vendor/xiaomi/sea/proprietary/vendor/etc/init/memtrack-mediatek.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/memtrack-mediatek.rc \
     vendor/xiaomi/sea/proprietary/vendor/etc/init/microtrust.bp_kmsetkey_ca.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/microtrust.bp_kmsetkey_ca.rc \
     vendor/xiaomi/sea/proprietary/vendor/etc/init/microtrust.init_thh.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/microtrust.init_thh.rc \
     vendor/xiaomi/sea/proprietary/vendor/etc/init/microtrust.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/microtrust.rc \
@@ -1381,6 +1382,7 @@ PRODUCT_PACKAGES += \
     vendor.mediatek.hardware.rcs-V1-ndk \
     vendor.mediatek.hardware.rcs@2.0 \
     APUWareUtilsAidlServer \
+    android.hardware.memtrack-V1-ndk_prebuilt \
     android.hardware.power-service-mediatek \
     chre_atoms_log \
     chremetrics-cpp \
@@ -1675,6 +1677,7 @@ PRODUCT_PACKAGES += \
     manifest_hwcomposer.xml \
     manifest_media_c2_default.xml \
     mapper.mediatek.xml \
+    memtrack-mediatek.xml \
     mtk_lbs_service.xml \
     mtkpower_applist-mtk-default.xml \
     power-mediatek.xml \
@@ -1704,6 +1707,7 @@ PRODUCT_PACKAGES += \
     android.hardware.media.c2@1.2-mediatek \
     android.hardware.media.c2@1.2-mediatek-64b \
     android.hardware.media.omx@1.0-service \
+    android.hardware.memtrack-service.mediatek \
     android.hardware.neuralnetworks-shim-service-mtk-legacy \
     android.hardware.secure_element@1.2-service-mediatek \
     camerahalserver \
