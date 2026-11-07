@@ -1162,7 +1162,7 @@ PRODUCT_PACKAGES += \
     libfgauge_gm30 \
     libfile_op \
     libflatmode \
-    libformatter \
+    libformatter-v33 \
     libfsmsmartpaparse \
     libgamehdr \
     libged \
@@ -1510,7 +1510,7 @@ PRODUCT_PACKAGES += \
     libmibokeh_mt6873 \
     libmipc \
     libmiriskmanager_isee \
-    libmnl \
+    libmnl-v33 \
     libmpbase \
     libmsnr \
     libmtk-fusion-ril-prop-vsim \
